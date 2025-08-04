@@ -1,1 +1,1 @@
-# solax-cloud-api-telegram-notifier
+# solax-cloud-api-notifier
