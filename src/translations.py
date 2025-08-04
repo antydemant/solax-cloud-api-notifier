@@ -9,7 +9,7 @@ localedir = os.path.join(os.path.dirname(__file__), "locales")
 
 def get_translation():
     lang = os.getenv("PROJECT_LANG", "en_US")
-    print(f"Using language: {lang}")
+    logging.info(f"Using language: {lang}")
     try:
         translations = translation("messages", localedir=localedir, languages=[lang])
     except FileNotFoundError:
