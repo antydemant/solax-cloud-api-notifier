@@ -1,0 +1,108 @@
+# Copyright (C) 2025 Ihor Ostapchuk
+# This file is distributed under the same license as the PACKAGE package.
+# Ihor Ostapchuk <ostap4ukigor@i.ua>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-05 00:12+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Ihor Ostapchuk <ostap4ukigor@i.ua>\n"
+"Language-Team: LANGUAGE <ostap4ukigor@i.ua>\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/telegram-notifier.py:35
+#, fuzzy, python-brace-format
+msgid "❌ Failed to send message to {chat_id}: {e}"
+msgstr "❌ Не вдалося відправити повідомлення:"
+
+#: src/telegram-notifier.py:60
+msgid "❌ API returned an error:"
+msgstr "❌ API повернуло помилку:"
+
+#: src/telegram-notifier.py:63
+msgid "❌ API error:"
+msgstr "❌ Помилка API:"
+
+#: src/telegram-notifier.py:94
+#, python-brace-format
+msgid "{hours} hours"
+msgstr "{hours} год"
+
+#: src/telegram-notifier.py:96
+#, python-brace-format
+msgid "{minutes} minutes"
+msgstr "{minutes} хв"
+
+#: src/telegram-notifier.py:98
+#, python-brace-format
+msgid "{seconds} seconds"
+msgstr "{seconds} сек"
+
+#: src/telegram-notifier.py:99
+msgid "0 seconds"
+msgstr "0 сек"
+
+#: src/telegram-notifier.py:127
+#, python-brace-format
+msgid "🚨 Inverter has not updated data >5 minutes ({time})"
+msgstr "🚨 Інвертор не оновлює дані >5 хв ({time})"
+
+#: src/telegram-notifier.py:135
+#, python-brace-format
+msgid "✅ Inverter is back online ({time})"
+msgstr "✅ Інвертор знову онлайн ({time})"
+
+#: src/telegram-notifier.py:151
+#, python-brace-format
+msgid ""
+"⚠️ Power went out! ⏰ {time}\n"
+"SOC: {soc}% | Home: {acpower}W | Grid: {feedin}W"
+msgstr ""
+"⚠️ Світло зникло! ⏰ {time}\n"
+"SOC: {soc}% | Будинок: {acpower}W | Мережа: {feedin}W"
+
+#: src/telegram-notifier.py:159
+#, python-brace-format
+msgid " (out for {duration})"
+msgstr " (не було {duration})"
+
+#: src/telegram-notifier.py:163
+#, python-brace-format
+msgid ""
+"✅ Power is back! ⏰ {time}{duration}\n"
+"SOC: {soc}% | Home: {acpower}W | Grid: {feedin}W"
+msgstr ""
+"✅ Світло з’явилось! ⏰ {time}{duration}\n"
+"SOC: {soc}% | Будинок: {acpower}W | Мережа: {feedin}W"
+
+#: src/telegram-notifier.py:174
+#, python-brace-format
+msgid "🚨 Inverter is unavailable (API not responding) ⏰ {time}"
+msgstr "🚨 Інвертор недоступний (API не відповідає) ⏰ {time}"
+
+#: src/telegram-subscriber.py:15
+msgid "❌ TELEGRAM_TOKEN is not set in the environment variables."
+msgstr "❌ TELEGRAM_TOKEN не знайдено в змінних середовища."
+
+#: src/telegram-subscriber.py:42
+msgid "▶️ Subscriber collector started..."
+msgstr "▶️ Збирач підписок актиовано..."
+
+#: src/telegram-subscriber.py:61
+msgid "✅ You are subscribed to power notifications ⚡️"
+msgstr "✅ Ви підписані на сповіщення про світло ⚡️"
+
+#: src/telegram-subscriber.py:62
+#, python-brace-format
+msgid "➕ New subscriber: {chat_id}"
+msgstr "➕ Новий підписник: {chat_id}"
+
+#: src/telegram-subscriber.py:64
+msgid "ℹ️ You are already subscribed."
+msgstr "ℹ️ Ви вже підписник."
