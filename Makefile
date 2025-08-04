@@ -1,4 +1,4 @@
-.PHONY: install create-venv activate-venv run-telegram-notify
+.PHONY: install create-env activate-env telegram-notify telegram-subscriber build-tranlsations extract-translations
 
 install:
 	@echo "Installing requirements..."
@@ -9,13 +9,17 @@ create-env:
 	python3 -m venv solax-cloud-notifier
 	@echo "Activate it using 'source solax-cloud-notifier/bin/activate'"
 
-activate-venv:
+activate-env:
 	@echo "Activating virtual environment..."
 	./solax-cloud-notifier/bin/activate
 
-run-telegram-notify:
+telegram-notify:
 	@echo "Running Telegram notifier..."
 	python3 ./src/telegram-notifier.py
+
+telegram-subscriber:
+	@echo "Running Telegram subscriber..."
+	python3 ./src/telegram-subscriber.py
 
 build-tranlsations:
 	@echo "Building translations..."
