@@ -43,26 +43,24 @@ def main():
     subscribers = load_subscribers()
     last_update_id = None
 
-    while True:
-        updates = get_updates(last_update_id + 1 if last_update_id else None)
-        if updates.get("ok"):
-            for u in updates["result"]:
-                last_update_id = u["update_id"]
-                msg = u.get("message")
-                if not msg:
-                    continue
-                chat_id = msg["chat"]["id"]
-                text = msg.get("text", "")
+    updates = get_updates(last_update_id + 1 if last_update_id else None)
+    if updates.get("ok"):
+        for u in updates["result"]:
+            last_update_id = u["update_id"]
+            msg = u.get("message")
+            if not msg:
+                continue
+            chat_id = msg["chat"]["id"]
+            text = msg.get("text", "")
 
-                if text.strip().lower() == "/start":
-                    if chat_id not in subscribers:
-                        subscribers.add(chat_id)
-                        save_subscribers(subscribers)
-                        send_message(chat_id, _("✅ You are subscribed to power notifications ⚡️"))
-                        print(_("➕ New subscriber: {chat_id}").format(chat_id=chat_id))
-                    else:
-                        send_message(chat_id, _("ℹ️ You are already subscribed."))
-        time.sleep(2)
+            if text.strip().lower() == "/start":
+                if chat_id not in subscribers:
+                    subscribers.add(chat_id)
+                    save_subscribers(subscribers)
+                    send_message(chat_id, _("✅ You are subscribed to power notifications ⚡️"))
+                    print(_("➕ New subscriber: {chat_id}").format(chat_id=chat_id))
+                # else:
+                #     send_message(chat_id, _("ℹ️ You are already subscribed."))
 
 if __name__ == "__main__":
     main()

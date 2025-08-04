@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-05 00:12+0300\n"
+"POT-Creation-Date: 2025-08-05 00:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Ihor Ostapchuk <ostap4ukigor@i.ua>\n"
 "Language-Team: LANGUAGE <ostap4ukigor@i.ua>\n"
@@ -16,49 +16,61 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/telegram-notifier.py:35
+#: src/telegram-notifier.py:17 src/telegram-subscriber.py:15
+msgid "❌ TELEGRAM_TOKEN is not set in the environment variables."
+msgstr "❌ TELEGRAM_TOKEN is not set in the environment variables."
+
+#: src/telegram-notifier.py:21
+msgid "❌ SOLAX_TOKEN is not set in the environment variables."
+msgstr "❌ SOLAX_TOKEN is not set in the environment variables."
+
+#: src/telegram-notifier.py:25
+msgid "❌ SOLAX_SN is not set in the environment variables."
+msgstr "❌ SOLAX_SN is not set in the environment variables."
+
+#: src/telegram-notifier.py:42
 #, fuzzy, python-brace-format
 msgid "❌ Failed to send message to {chat_id}: {e}"
 msgstr "❌ Failed to send message:"
 
-#: src/telegram-notifier.py:60
+#: src/telegram-notifier.py:67
 msgid "❌ API returned an error:"
 msgstr "❌ API returned an error:"
 
-#: src/telegram-notifier.py:63
+#: src/telegram-notifier.py:70
 msgid "❌ API error:"
 msgstr "❌ API error:"
 
-#: src/telegram-notifier.py:94
+#: src/telegram-notifier.py:101
 #, python-brace-format
 msgid "{hours} hours"
 msgstr "{hours} hours"
 
-#: src/telegram-notifier.py:96
+#: src/telegram-notifier.py:103
 #, python-brace-format
 msgid "{minutes} minutes"
 msgstr "{minutes} minutes"
 
-#: src/telegram-notifier.py:98
+#: src/telegram-notifier.py:105
 #, python-brace-format
 msgid "{seconds} seconds"
 msgstr "{seconds} seconds"
 
-#: src/telegram-notifier.py:99
+#: src/telegram-notifier.py:106
 msgid "0 seconds"
 msgstr "0 seconds"
 
-#: src/telegram-notifier.py:127
+#: src/telegram-notifier.py:134
 #, python-brace-format
 msgid "🚨 Inverter has not updated data >5 minutes ({time})"
 msgstr "🚨 Inverter has not updated data >5 minutes ({time})"
 
-#: src/telegram-notifier.py:135
+#: src/telegram-notifier.py:142
 #, python-brace-format
 msgid "✅ Inverter is back online ({time})"
 msgstr "✅ Inverter is back online ({time})"
 
-#: src/telegram-notifier.py:151
+#: src/telegram-notifier.py:158
 #, python-brace-format
 msgid ""
 "⚠️ Power went out! ⏰ {time}\n"
@@ -67,12 +79,12 @@ msgstr ""
 "⚠️ Power went out! ⏰ {time}\n"
 "SOC: {soc}% | Home: {acpower}W | Grid: {feedin}W"
 
-#: src/telegram-notifier.py:159
+#: src/telegram-notifier.py:166
 #, python-brace-format
 msgid " (out for {duration})"
 msgstr " (out for {duration})"
 
-#: src/telegram-notifier.py:163
+#: src/telegram-notifier.py:170
 #, python-brace-format
 msgid ""
 "✅ Power is back! ⏰ {time}{duration}\n"
@@ -81,28 +93,20 @@ msgstr ""
 "✅ Power is back! ⏰ {time}{duration}\n"
 "SOC: {soc}% | Home: {acpower}W | Grid: {feedin}W"
 
-#: src/telegram-notifier.py:174
+#: src/telegram-notifier.py:181
 #, python-brace-format
 msgid "🚨 Inverter is unavailable (API not responding) ⏰ {time}"
 msgstr "🚨 Inverter is unavailable (API not responding) ⏰ {time}"
 
-#: src/telegram-subscriber.py:15
-msgid "❌ TELEGRAM_TOKEN is not set in the environment variables."
-msgstr ""
-
 #: src/telegram-subscriber.py:42
 msgid "▶️ Subscriber collector started..."
-msgstr ""
+msgstr "▶️ Subscriber collector started..."
+
+#: src/telegram-subscriber.py:60
+msgid "✅ You are subscribed to power notifications ⚡️"
+msgstr "✅ You are subscribed to power notifications ⚡️"
 
 #: src/telegram-subscriber.py:61
-msgid "✅ You are subscribed to power notifications ⚡️"
-msgstr ""
-
-#: src/telegram-subscriber.py:62
 #, python-brace-format
 msgid "➕ New subscriber: {chat_id}"
-msgstr ""
-
-#: src/telegram-subscriber.py:64
-msgid "ℹ️ You are already subscribed."
-msgstr ""
+msgstr "➕ New subscriber: {chat_id}"
