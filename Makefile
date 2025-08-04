@@ -1,4 +1,4 @@
-.PHONY: install create-env activate-env telegram-notify telegram-subscriber build-tranlsations extract-translations
+.PHONY: install create-env activate-env telegram-notify telegram-subscriber build-tranlsations extract-translations lint-check
 
 install:
 	@echo "Installing requirements..."
@@ -6,7 +6,7 @@ install:
 
 create-env:
 	@echo "Creating virtual environment..."
-	python3 -m venv solax-cloud-notifier
+	python -m venv solax-cloud-notifier
 	@echo "Activate it using 'source solax-cloud-notifier/bin/activate'"
 
 activate-env:
@@ -15,11 +15,11 @@ activate-env:
 
 telegram-notify:
 	@echo "Running Telegram notifier..."
-	python3 ./src/telegram-notifier.py
+	python ./src/telegram-notifier.py
 
 telegram-subscriber:
 	@echo "Running Telegram subscriber..."
-	python3 ./src/telegram-subscriber.py
+	python ./src/telegram-subscriber.py
 
 build-tranlsations:
 	@echo "Building translations..."
@@ -32,5 +32,15 @@ extract-translations:
 	msgmerge --update src/locales/uk/LC_MESSAGES/messages.po src/locales/messages.pot
 	msgmerge --update src/locales/en/LC_MESSAGES/messages.po src/locales/messages.pot
 	@echo "Translations extracted and updated."
+
+lint-check:
+	@echo "Running lint checks..."
+	python -m black --check src/
+	python -m flake8 --quiet --verbose src/
+
+lint:
+	@echo "Running and applying lint checks..."
+	python -m black src/
+	python -m flake8 src/
 
 

@@ -1,5 +1,6 @@
 import requests
-import time
+
+# import time
 import json
 import os
 from dotenv import load_dotenv
@@ -13,10 +14,11 @@ _ = get_translation()
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 if not TELEGRAM_TOKEN:
     raise ValueError(_("❌ TELEGRAM_TOKEN is not set in the environment variables."))
-    
+
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
 
 SUBSCRIBERS_FILE = "subscribers.json"
+
 
 def load_subscribers():
     if os.path.exists(SUBSCRIBERS_FILE):
@@ -24,9 +26,11 @@ def load_subscribers():
             return set(json.load(f))
     return set()
 
+
 def save_subscribers(subs):
     with open(SUBSCRIBERS_FILE, "w") as f:
         json.dump(list(subs), f)
+
 
 def get_updates(offset=None):
     params = {"timeout": 30}
@@ -35,8 +39,12 @@ def get_updates(offset=None):
     resp = requests.get(f"{TELEGRAM_API}/getUpdates", params=params, timeout=60)
     return resp.json()
 
+
 def send_message(chat_id, text):
-    requests.post(f"{TELEGRAM_API}/sendMessage", json={"chat_id": chat_id, "text": text})
+    requests.post(
+        f"{TELEGRAM_API}/sendMessage", json={"chat_id": chat_id, "text": text}
+    )
+
 
 def main():
     print(_("▶️ Subscriber collector started..."))
@@ -57,10 +65,13 @@ def main():
                 if chat_id not in subscribers:
                     subscribers.add(chat_id)
                     save_subscribers(subscribers)
-                    send_message(chat_id, _("✅ You are subscribed to power notifications ⚡️"))
+                    send_message(
+                        chat_id, _("✅ You are subscribed to power notifications ⚡️")
+                    )
                     print(_("➕ New subscriber: {chat_id}").format(chat_id=chat_id))
                 # else:
                 #     send_message(chat_id, _("ℹ️ You are already subscribed."))
+
 
 if __name__ == "__main__":
     main()
