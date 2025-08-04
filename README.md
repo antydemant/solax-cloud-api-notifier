@@ -1,5 +1,7 @@
 # solax-cloud-api-notifier
 
+#### nit: The author is running SolaX Inverter (X1-HYB-6.0-LV) in UPS mode without PV
+
 ### Steps to run Solax Cloud API Notifier project
 
 Create virtual environment and activate:
